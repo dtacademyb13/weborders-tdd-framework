@@ -1,0 +1,5 @@
+TDD Framework Building Steps:
+
+1. Create a maven project
+2. Add the necessary dependencies
+3. Add project specific .gitignore file
