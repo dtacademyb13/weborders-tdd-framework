@@ -4,3 +4,4 @@ target/
 .DS_Store
 *.dat
 #.gitignore file should be added to the project BEFORE tracking the project with git
+#git rm -r --cached <folder or file name> to remove unwanted folders or files retroactively
