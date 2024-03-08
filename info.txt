@@ -5,5 +5,7 @@ TDD Framework Building Steps:
 3. Add project specific .gitignore file
 4. Create the package structure
 5. Add your test cases
-6. Add xml files for running tests
-5. Add and configure the Base class
+6. Add xml files for running tests (regression, smoke)
+7. Add and configure the Base class
+8. Add properties file and ConfigReader Utility class to read from the file
+

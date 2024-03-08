@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import utilities.Driver;
 
 import java.time.Duration;
 
@@ -14,19 +15,15 @@ import java.time.Duration;
  */
 public class TestBase {
 
-    public WebDriver driver;
-
-
-    @BeforeMethod
+    @BeforeMethod (alwaysRun = true)
     public void setup(){
-        driver =  new EdgeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        Driver.getDriver().manage().window().maximize();
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
     }
 
-    @AfterMethod
+    @AfterMethod (alwaysRun = true)
     public void tearDown(){
-        driver.quit();
+        Driver.quitDriver();
     }
 }
