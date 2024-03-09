@@ -25,8 +25,9 @@ public class LoginTests extends TestBase {
 
 
         Driver.getDriver().get(ConfigReader.getProperty("url"));
-        Driver.getDriver().findElement(By.id("ctl00_MainContent_username")).sendKeys(ConfigReader.getProperty("username"), Keys.TAB, ConfigReader.getProperty("password"), Keys.ENTER);
+        Driver.getDriver().findElement(By.id("ctl00_MainContent_username")).sendKeys(ConfigReader.getProperty("username"), Keys.TAB, "invalid", Keys.ENTER);
         Assert.assertEquals(Driver.getDriver().getTitle(), "Web Orders");
+
     }
 
     @Test (groups = "smoke")

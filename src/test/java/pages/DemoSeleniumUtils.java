@@ -1,7 +1,11 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import utilities.CSVReader;
 import utilities.Driver;
 import utilities.SeleniumUtils;
@@ -11,12 +15,21 @@ import java.util.Arrays;
 public class DemoSeleniumUtils {
 
 
-    public static void main(String[] args) {
+    @Test
+    public static void main() {
 
 
-        Object[][] objects = CSVReader.readData("src/test/resources/customers.csv");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
 
-        System.out.println(Arrays.deepToString(objects));
+       WebDriver driver = new ChromeDriver();
+       driver.manage().window().maximize();
+       driver.get("https://www.mockaroo.com/");
+
+       driver.findElement(By.xpath("//a[@href='/pricing'][@class]")).click();
+
+
+
 
     }
 
