@@ -1,3 +1,8 @@
+TDD(Test Driven Development) Framework
+
+Do not confuse TDD with DDT -> DDT(Data-Driven Testing) - Running the same tests with different data inputs. An example is DataProvider.
+
+
 TDD Framework Building Steps:
 
 1. Create a maven project
@@ -8,4 +13,23 @@ TDD Framework Building Steps:
 6. Add xml files for running tests (regression, smoke)
 7. Add and configure the Base class
 8. Add properties file and ConfigReader Utility class to read from the file
+
+
+
+
+TDD TestNG Framework components:
+Java (version 17)-> writing framework code
+Maven (3.9.6) -> manage framework structure, dependencies. Execute tests thru command line.
+Selenium WebDriver(4.18) -> creating UI tests
+TestNG(7.9) -> run the tests, configure and organize tests cases via an xml file and annotations
+Faker -> mock data generation
+Commons IO - IO operations
+IntelliJ -> develop, run, test the framework code, fix the errors, speed up the developement process
+Git/GitHub -> version control, remote repository, code collaboration
+.gitignore -> ignore unnecessary files to prevent merge conflicts
+testng xml file -> configure/organize/group our tests cases
+.properties file -> stores project specific global data/variables
+utility classes (ConfigReader, Driver, SeleniumUtils) -> store commonly used methods
+Framework Base Class -> store common setup and teardown operations for all test cases
+Singleton -> design pattern applied to Driver class to ensure a single WebDriver instance during the test execution
 
