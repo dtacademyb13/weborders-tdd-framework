@@ -9,13 +9,13 @@ TDD Framework Building Steps:
 2. Add the necessary dependencies
 3. Add project specific .gitignore file
 4. Create the package structure
-5. Add your test cases
+5. Add your test cases following the Page Object Model
 6. Add xml files for running tests (regression, smoke)
 7. Add and configure the Base class
 8. Add properties file and ConfigReader Utility class to read from the file
 9. Add other utilities (Driver, SeleniumUtils, CSVReader)
 10. Add headless browser support
-
+11.
 
 
 

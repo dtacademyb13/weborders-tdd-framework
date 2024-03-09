@@ -1,20 +1,29 @@
 package pages;
 
+import lombok.Data;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+@Data
 public class LoginPage {
 
-    // Object repository
-     private WebElement usernameField = Driver.getDriver().findElement(By.id("ctl00_MainContent_username"));
+    public LoginPage(){
+        // this line initializes all variables with @FindBy annotations
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
+
+     @FindBy (id = "ctl00_MainContent_username")
+     private WebElement usernameField;
+
+    @FindBy (xpath = "//someXpath")
+    private WebElement passwordField;
 
 
-     public WebElement getUsernameField() {
-          return usernameField;
-     }
 
 
      public void login(String username, String password){

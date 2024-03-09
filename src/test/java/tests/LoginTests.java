@@ -46,7 +46,7 @@ public class LoginTests extends TestBase {
     @Test
     public void testInvalidCredentialsNoUsername(){
         Driver.getDriver().get("http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrders/Login.aspx");
-        new LoginPage().getUsernameField().sendKeys("", Keys.TAB, "invalid", Keys.ENTER);
+        new LoginPage().getUsernameField().sendKeys("", Keys.TAB, "invalid");
         Assert.assertNotEquals(Driver.getDriver().getTitle(), "Web Orders");
     }
 
