@@ -13,6 +13,9 @@ TDD Framework Building Steps:
 6. Add xml files for running tests (regression, smoke)
 7. Add and configure the Base class
 8. Add properties file and ConfigReader Utility class to read from the file
+9. Add other utilities (Driver, SeleniumUtils, CSVReader)
+10. Add headless browser support
+
 
 
 
