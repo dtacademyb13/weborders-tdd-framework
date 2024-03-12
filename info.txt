@@ -19,7 +19,6 @@ TDD Framework Building Steps:
 
 
 
-
 TDD TestNG Framework components:
 Java (version 17)-> writing framework code
 Maven (3.9.6) -> manage framework structure, dependencies. Execute tests thru command line.
@@ -34,5 +33,21 @@ testng xml file -> configure/organize/group our tests cases
 .properties file -> stores project specific global data/variables
 utility classes (ConfigReader, Driver, SeleniumUtils) -> store commonly used methods
 Framework Base Class -> store common setup and teardown operations for all test cases
-Singleton -> design pattern applied to Driver class to ensure a single WebDriver instance during the test execution
+Lombok - > generates boilerplate code (toString, getter/setters, hashcode and equals) for our page classes through annotations @Data, @AllArgsConstructor, @NoArgsConstructor
+
+
+
+Design Pattern used in this Framework:
+
+Singleton - design pattern applied to Driver class to ensure a single WebDriver instance during the test execution
+
+Page Object Model - design pattern used in UI test frameworks to reduce repeated code and improve maintainability
+ Steps:
+ - create a class for each page of the app, and add the webelements there with @FindBy annotations
+ - Use the page class in your test by creating the object of the class and accessing the webelements through getters or suing the methods
+Page Factory - a technique of implementing Page Object Model in a more readable and efficient way:
+ We use @FindBy annotations for Webelements and use PageFactory.initElements(Driver.getDriver(), this) in the constructor of the class
+
+
+
 

@@ -1,6 +1,6 @@
 package pages;
 
-import lombok.Data;
+import lombok.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -10,6 +10,12 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 @Data
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@AllArgsConstructor
+//@NoArgsConstructor
 public class LoginPage {
 
     public LoginPage(){
