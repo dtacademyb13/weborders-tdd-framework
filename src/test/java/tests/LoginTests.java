@@ -28,7 +28,7 @@ public class LoginTests extends TestBase {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
         LoginPage loginPage = new LoginPage();
         loginPage.login(ConfigReader.getProperty("username"), ConfigReader.getProperty("password"));
-        Assert.assertEquals(Driver.getDriver().getTitle(), "Web Orders");
+        Assert.assertEquals(Driver.getDriver().getTitle(), "Web Ordersblabla");
 
     }
 
