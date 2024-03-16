@@ -130,7 +130,7 @@ public class SeleniumUtils {
         File source = ts.getScreenshotAs(OutputType.FILE);
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         String fileName = name + date + ".png";
-        String target = System.getProperty("user.dir") + "/target/extentReports/" + fileName;
+        String target = System.getProperty("user.dir") + "/target/extentReport/" + fileName;
         File finalDestination = new File(target);
 
         try {

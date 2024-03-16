@@ -33,15 +33,29 @@ public class AllProductsTests  extends TestBase{
 
     @Test
     public void verifyProductNames(){
+
+
+        logger.info("Navigate to homepage");
         Driver.getDriver().get("http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrders/Login.aspx");
+
+        logger.info("Enter credentials");
         Driver.getDriver().findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester", Keys.TAB, "test", Keys.ENTER);
 
+
+        logger.info("Click on products link");
         Driver.getDriver().findElement(By.linkText("View all products")).click();
 
+
+
+        logger.info("Extract product names");
         List<WebElement> elements = Driver.getDriver().findElements(By.xpath("//table[@class='ProductsTable']//tr//td[1]"));
         List<String> elementsText  = new ArrayList<>();
         elements.forEach( webElement -> elementsText.add(webElement.getText()) );
 
+
+        logger.info("Verify the product names");
         Assert.assertEquals(elementsText, List.of("MyMoney", "FamilyAlbum", "ScreenSaver"));
+
+
     }
 }
