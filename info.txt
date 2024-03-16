@@ -15,7 +15,7 @@ TDD Framework Building Steps:
 8. Add properties file and ConfigReader Utility class to read from the file
 9. Add other utilities (Driver, SeleniumUtils, CSVReader)
 10. Add headless browser support
-11.
+11. Add cross browser testing support by adding an option to pass broswer from command line
 
 
 

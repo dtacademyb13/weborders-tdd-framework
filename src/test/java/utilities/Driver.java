@@ -16,6 +16,10 @@ import org.openqa.selenium.safari.SafariOptions;
  */
 public class Driver {
 
+
+
+
+
     private static WebDriver driver;
 
     private Driver(){}
@@ -24,7 +28,15 @@ public class Driver {
 
         if(driver == null){
 
-            String browserType = ConfigReader.getProperty("browser").toLowerCase();
+            String browserType = System.getProperty("browser"); // read the command line browser type
+
+            if(browserType == null){ // if no browser is passed in command line
+                browserType = ConfigReader.getProperty("browser").toLowerCase(); // use the one in config properties
+            }
+
+
+
+
             switch (browserType){
                 case "chrome" -> driver = new ChromeDriver();
                 case "firefox" -> driver = new FirefoxDriver();
