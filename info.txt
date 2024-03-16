@@ -50,4 +50,69 @@ Page Factory - a technique of implementing Page Object Model in a more readable 
 
 
 
+Branching Basics:
+git branch -> shows the current branch you are at
+git branch <name> -> creates a new branch
+git checkout <name> -> switches to the branch
+git branch -d <name> -> delete the branch, you need to be in other branch to do this
+
+
+
+Using Branch Based workflow for Test Automation Framework Code Collaboration:
+
+1. Framework Creation and Initial Push: The team lead creates a test automation
+framework and pushes it to his/her remote GitHub repository.
+2. Access Provision: The team lead provides push access
+to the other team members by adding them as collaborators.
+3. Framework Cloning: Each team member clones the test automation framework on
+their local machines using the command git clone.
+4. Code Update: Each team member pulls the latest code from the main branch to
+ensure they're working on the most recent version of the project.
+5. Branch Creation: Team members create new branches for implementing their tasks
+and switch using git checkout -b branch-name.
+6. Implementing Changes: Team members start adding changes and commit those
+changes in their respective branches using git commit -m "message".
+7. Pushing Changes: Once they've completed their work, team members push their
+branches to the remote repository using git push --set-upstream origin branch-
+name. This step can be done either through the command line or through IntelliJ
+(which requires login to the GitHub account).
+8. Pull Request (Merge Request) Creation: Each team member then logs into their GitHub account,
+accesses the team repository, and creates a pull request to propose the changes they
+made in their branch be merged into main.
+9. Code Review and Merge: The assigned reviewer(s) review the pull request and if
+everything is fine, they merge the branch into main, close the pull request, and delete
+the branch from the remote repository.
+10. Local Branch Deletion: After their changes have been merged, team members delete
+their old branches locally using git branch -d branch-name.
+11. Pull the Main Branch: To get the latest updates that include their and others’ merged
+changes, team members pull the main branch code.
+12. Repetition of Steps: Steps 5-11 are repeated for every new task
+
+
+Git Merge Conflict - it is a conflict when a change that comes from one branch is incompatible with the change that already exists in the current branch
+
+Example merge conflict:
+
+<<<<<<< sprint03
+browser=safari
+
+=======
+browser=edge
+>>>>>>> main
+
+To resolve: choose the change that you want to keep and commit the change in GitHub.
+
+<<<<<<< sprint03  // remove this line
+browser=safari      // decide which version to keep
+
+=======           // remove this line
+browser=edge      // decide which version to keep
+>>>>>>> main       // remove this line
+
+How to avoid merge conflicts?
+1. Always pull the latest code from the MAIN branch before adding any new code or creating a new branch
+2. Limit working on the common files such as TestBase, .properties etc. Create your own test class for your test code
+
+
+
 
