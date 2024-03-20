@@ -18,6 +18,7 @@ TDD Framework Building Steps:
 11. Add headless browser support
 12. Add cross browser testing support by adding an option to pass browser from command line
 13. Add Extent Reports for pretty html reports
+14. Add support for parallel testing
 
 
 
@@ -35,12 +36,12 @@ Git/GitHub -> version control, remote repository, code collaboration
 testng xml file -> configure/organize/group our tests cases
 .properties file -> stores project specific global data/variables
 utility classes (ConfigReader, Driver, SeleniumUtils) -> store commonly used methods
-Framework Base Class -> store common setup and teardown operations for all test cases
+Test Base Class -> store common setup and teardown operations for all test cases
 Lombok - > generates boilerplate code (toString, getter/setters, hashcode and equals) for our page classes through annotations @Data, @AllArgsConstructor, @NoArgsConstructor
 Extent Report -> generate a detailed html report for stakeholders
 
 
-Design Pattern used in this Framework:
+Design Patterns used in this Framework:
 
 Singleton - design pattern applied to Driver class to ensure a single WebDriver instance during the test execution
 
@@ -49,7 +50,20 @@ Page Object Model - design pattern used in UI test frameworks to reduce repeated
  - create a class for each page of the app, and add the webelements there with @FindBy annotations
  - Use the page class in your test by creating the object of the class and accessing the webelements through getters or suing the methods
 Page Factory - a technique of implementing Page Object Model in a more readable and efficient way:
- We use @FindBy annotations for Webelements and use PageFactory.initElements(Driver.getDriver(), this) in the constructor of the class
+ We use @FindBy annotations for WebElements and use PageFactory.initElements(Driver.getDriver(), this) in the constructor of the class
+
+
+
+Types of tests that this framework supports:
+
+- smoke
+- regression
+- UI,DB,API tests
+- data-driven tests
+- cross-browser
+- headless
+- parallel
+
 
 
 
